@@ -43,6 +43,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
     }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public/favicon.ico", to: "" }],
+    }),
     new ModuleFederationPlugin({
       name: "CatalogueMFE",
       filename: "remoteEntry.js",
@@ -63,9 +66,6 @@ module.exports = {
           requiredVersion: "18.2.0",
         },
       },
-    }),
-    new CopyWebpackPlugin({
-      patterns: [{ from: "public/favicon.ico", to: "" }],
     }),
   ],
 };

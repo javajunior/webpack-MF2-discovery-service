@@ -35,6 +35,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public/favicon.ico", to: "" }],
+    }),
     new ModuleFederationPlugin({
       name: "UserDetailsMFE",
       filename: "remoteEntry.js",
@@ -55,12 +61,6 @@ module.exports = {
           requiredVersion: "17.0.2",
         },
       },
-    }),
-    new HtmlWebpackPlugin({
-      template: "./public/index.html",
-    }),
-    new CopyWebpackPlugin({
-      patterns: [{ from: "public/favicon.ico", to: "" }],
     }),
   ],
 }; 
