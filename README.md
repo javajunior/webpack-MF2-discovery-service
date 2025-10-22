@@ -1,4 +1,13 @@
 # ThreadTales Micro-Frontend Architecture
+## Setup
+
+Per installare le dipendenze e avviare tutti i pacchetti, esegui questi comandi su ognuna delle sotto cartelle:
+
+```sh
+npm install
+npm run build
+npm run serve
+```
 
 This project demonstrates a micro-frontend architecture using Module Federation, React, and various patterns for state management and component communication.
 
