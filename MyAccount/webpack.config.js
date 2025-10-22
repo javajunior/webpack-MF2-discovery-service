@@ -1,5 +1,7 @@
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+
 
 module.exports = {
   mode: 'development',
@@ -52,6 +54,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'public/frontend-discovery.json', to: '' },
+        { from: 'public/favicon.ico', to: '' }
+      ]
     }),
   ],
 }; 

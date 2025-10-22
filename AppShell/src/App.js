@@ -72,7 +72,7 @@ function App() {
       const instance = getInstance();
       setMfInstance(instance);
 
-      const response = await fetch('http://127.0.0.1:8080/frontend-discovery.json');
+      const response = await fetch('/frontend-discovery.json');
       const data = await response.json();
 
       const remotes = [];

@@ -1,62 +1,66 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('@module-federation/enhanced');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
-  entry: './src/index.js',
+  mode: "development",
+  entry: "./src/index.js",
   output: {
-    publicPath: 'auto',
-    clean: true
+    publicPath: "auto",
+    clean: true,
   },
   devServer: {
-    port: 2004, 
+    port: 2004,
     historyApiFallback: true,
     hot: false,
-    liveReload: false
+    liveReload: false,
   },
   module: {
     rules: [
       {
         test: /\.m?js$/,
-        type: 'javascript/auto',
+        type: "javascript/auto",
         resolve: {
           fullySpecified: false,
         },
       },
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: ['@babel/preset-react'],
+          presets: ["@babel/preset-react"],
         },
-      }
+      },
     ],
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'UserDetailsMFE',
-      filename: 'remoteEntry.js',
+      name: "UserDetailsMFE",
+      filename: "remoteEntry.js",
       exposes: {
-        './MFE': './src/UserDetails'
+        "./MFE": "./src/UserDetails",
       },
       shared: {
-        react: { 
-            import: 'react',
-            shareScope: 'react17',
-            singleton: true,
-            requiredVersion: '17.0.2'
+        react: {
+          import: "react",
+          shareScope: "react17",
+          singleton: true,
+          requiredVersion: "17.0.2",
         },
-        'react-dom': { 
-            import: 'react-dom',
-            shareScope: 'react17',
-            singleton: true,
-            requiredVersion: '17.0.2'
-        }
+        "react-dom": {
+          import: "react-dom",
+          shareScope: "react17",
+          singleton: true,
+          requiredVersion: "17.0.2",
+        },
       },
     }),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: "./public/index.html",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{ from: "public/favicon.ico", to: "" }],
     }),
   ],
 }; 

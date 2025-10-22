@@ -32,7 +32,7 @@ function MyAccount({ emitter }) {
 
   const loadMfes = useCallback(async () => {
     try {
-      const response = await fetch('http://127.0.0.1:8080/frontend-discovery.json');
+      const response = await fetch('/frontend-discovery.json');
       const data = await response.json();
 
       const userMfes = [
