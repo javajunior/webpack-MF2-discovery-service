@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 import ProductDetails from "./ProductDetails";
 
 function Catalogue() {
   const navigate = useNavigate();
   const { productId } = useParams();
+  const [count, setCount] = useState(0);
 
   const handleViewDetails = (productId) => {
     navigate(`/catalogue/${productId}`);
@@ -65,6 +66,19 @@ function Catalogue() {
         padding: "0 2rem",
       }}
     >
+      <button
+        onClick={() => setCount((prevCount) => prevCount + 1)}
+        style={{ marginLeft: "0.5rem" }}
+      >
+        Increment react18
+      </button>
+      <button
+        onClick={() => setCount((prevCount) => prevCount - 1)}
+        style={{ marginLeft: "0.5rem" }}
+      >
+        Decrement react18
+      </button>
+      <span style={{ marginLeft: "1rem" }}>Count: {count}</span>
       <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
         Our T-Shirt Collection
       </h1>

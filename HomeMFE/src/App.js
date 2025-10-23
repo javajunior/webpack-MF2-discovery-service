@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function App() {
   const navigate = useNavigate();
+  const [count, setCount] = useState(0);
 
   const handleViewDetails = (id) => {
     // Use React Router's navigate instead of window.location.href
@@ -22,6 +23,19 @@ function App() {
       >
         React v{React.version}
       </div>
+      <button
+        onClick={() => setCount((prevCount) => prevCount + 1)}
+        style={{ marginLeft: "0.5rem" }}
+      >
+        Increment react 17
+      </button>
+      <button
+        onClick={() => setCount((prevCount) => prevCount - 1)}
+        style={{ marginLeft: "0.5rem" }}
+      >
+        Decrement react 17
+      </button>
+      <span style={{ marginLeft: "1rem" }}>Count react17: {count}</span>
       <div
         className="hero"
         style={{
