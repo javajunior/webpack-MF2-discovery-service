@@ -1,6 +1,5 @@
-import React from 'react';
-import Catalogue from './Catalogue';
-
+import React from "react";
+import Catalogue from "./Catalogue";
 
 function App() {
   return (

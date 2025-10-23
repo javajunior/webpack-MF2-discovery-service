@@ -1,8 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { ModuleFederationPlugin } = require('@module-federation/enhanced');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ModuleFederationPlugin } = require("@module-federation/enhanced");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   entry: "./src/index",

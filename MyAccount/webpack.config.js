@@ -1,7 +1,6 @@
-const { ModuleFederationPlugin } = require('@module-federation/enhanced');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { ModuleFederationPlugin } = require("@module-federation/enhanced");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-
 
 module.exports = {
   mode: "development",
@@ -63,4 +62,4 @@ module.exports = {
       },
     }),
   ],
-}; 
+};

@@ -17,7 +17,7 @@
       }
     ],
     "CatalogueMFE": [
-    {
+      {
         "url": "http://localhost:2002/remoteEntry.js",
         "metadata": {
           "integrity": "sha256-initial",
@@ -78,4 +78,4 @@
       }
     ]
   }
-} 
+}
