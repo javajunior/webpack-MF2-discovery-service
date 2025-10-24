@@ -70,13 +70,13 @@ function Catalogue() {
         onClick={() => setCount((prevCount) => prevCount + 1)}
         style={{ marginLeft: "0.5rem" }}
       >
-        Increment react18
+        Increment react 18
       </button>
       <button
         onClick={() => setCount((prevCount) => prevCount - 1)}
         style={{ marginLeft: "0.5rem" }}
       >
-        Decrement react18
+        Decrement react 18
       </button>
       <span style={{ marginLeft: "1rem" }}>Count: {count}</span>
       <h1 style={{ textAlign: "center", marginBottom: "2rem" }}>
