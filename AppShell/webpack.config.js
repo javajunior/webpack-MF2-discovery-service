@@ -11,9 +11,10 @@ module.exports = {
       directory: path.join(__dirname, "dist"),
     },
     port: 2000,
+    historyApiFallback: true,
   },
   output: {
-    publicPath: "auto",
+    publicPath: "/",
   },
   module: {
     rules: [
