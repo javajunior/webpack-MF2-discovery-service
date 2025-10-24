@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-function App() {
-  const navigate = useNavigate();
+function App({ onNavigate }) {
   const [count, setCount] = useState(0);
 
   const handleViewDetails = (id) => {
-    // Use React Router's navigate instead of window.location.href
-    navigate(`/catalogue/${id}`);
+    onNavigate(`/catalogue/${id}`);
   };
 
   return (

@@ -50,13 +50,9 @@ module.exports = {
       name: "HomeMFE",
       filename: "remoteEntry.js",
       exposes: {
-        "./MFE": "./src/App",
+        "./MFE": "./src/AppWrapper",
       },
       shared: {
-        "react-router-dom": {
-          singleton: true,
-          requiredVersion: "6.21.3",
-        },
         react: {
           import: "react",
           shareScope: "react17",

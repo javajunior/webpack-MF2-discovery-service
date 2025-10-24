@@ -1,7 +1,12 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { getInstance } from "@module-federation/runtime-tools";
 
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import Header from "./Header";
 import Loading from "./Loading";
 import NotificationModal from "./components/NotificationModal";
@@ -9,11 +14,12 @@ import emitter from "./services/eventEmitter";
 import "./index.css";
 
 const System = ({ request, mfInstance }) => {
+  const navigate = useNavigate();
+
   if (!request) {
     return <h2>No system specified</h2>;
   }
 
-  // Use simple Module Federation without React Bridge
   const MFE = React.lazy(() =>
     mfInstance.loadRemote(request).then((module) => ({
       default: module.default,
@@ -22,7 +28,7 @@ const System = ({ request, mfInstance }) => {
 
   return (
     <React.Suspense fallback={<div>Loading...</div>}>
-      <MFE emitter={emitter} />
+      <MFE emitter={emitter} onNavigate={(path) => navigate(path)} />
     </React.Suspense>
   );
 };
