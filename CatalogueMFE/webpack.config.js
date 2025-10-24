@@ -55,7 +55,7 @@ module.exports = {
       shared: {
         "react-router-dom": {
           singleton: true,
-          requiredVersion: "6.21.3",
+          requiredVersion: "6.30.1",
         },
         react: {
           singleton: true,

@@ -58,7 +58,7 @@ module.exports = {
         },
         "react-router-dom": {
           singleton: true,
-          requiredVersion: "6.21.3",
+          requiredVersion: "6.30.1",
         },
       },
     }),
