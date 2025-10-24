@@ -45,7 +45,7 @@ module.exports = {
       name: "UserDetailsMFE",
       filename: "remoteEntry.js",
       exposes: {
-        "./MFE": "./src/UserDetails",
+        "./MFE": "./src/AppWrapper",
       },
       shared: {
         react: {
